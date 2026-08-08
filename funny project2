@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CampusExcuse</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #f3f4ff;
+            padding: 50px;
+        }
+
+        .box {
+            max-width: 450px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px #bbb;
+        }
+
+        select, button {
+            width: 90%;
+            padding: 12px;
+            margin: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #6c63ff;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f0ff;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>🎓 CampusExcuse</h2>
+    <p>Choose your situation 😅</p>
+
+    <select id="situation">
+        <option value="bus">🚌 Missed Bus</option>
+        <option value="sleep">😴 Overslept</option>
+        <option value="assignment">📚 Assignment</option>
+        <option value="rain">🌧️ Heavy Rain</option>
+        <option value="internet">📶 Internet Problem</option>
+        <option value="laptop">💻 Laptop Problem</option>
+    </select>
+
+    <button onclick="generate()">Generate Excuse</button>
+
+    <div id="result">
+        Your excuse will appear here...
+    </div>
+
+</div>
+
+<script>
+
+const excuses = {
+
+    bus: [
+        "The bus arrived earlier than usual today.",
+        "There was unexpected traffic on my route.",
+        "My bus broke down on the way."
+    ],
+
+    sleep: [
+        "My alarm didn't ring properly this morning.",
+        "I accidentally switched off my alarm while sleeping.",
+        "I had a very disturbed sleep last night."
+    ],
+
+    assignment: [
+        "I completed the assignment, but I had an issue while uploading it.",
+        "I misunderstood the submission deadline.",
+        "I had a technical issue while preparing the assignment."
+    ],
+
+    rain: [
+        "Heavy rain caused delays on my route.",
+        "The roads were flooded, so I got delayed.",
+        "Public transport was delayed because of the rain."
+    ],
+
+    internet: [
+        "My internet connection suddenly stopped working.",
+        "There was a network issue while uploading my work.",
+        "The internet was unstable throughout the morning."
+    ],
+
+    laptop: [
+        "My laptop suddenly stopped working.",
+        "My laptop had a technical problem while I was working.",
+        "The system restarted unexpectedly and I lost some work."
+    ]
+};
+
+function generate() {
+
+    let situation = document.getElementById("situation").value;
+
+    let list = excuses[situation];
+
+    let random = Math.floor(Math.random() * list.length);
+
+    document.getElementById("result").innerText =
+        "💬 " + list[random];
+}
+
+</script>
+
+</body>
+</html>
