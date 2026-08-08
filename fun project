@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Friendship Calculator</title>
+</head>
+<body>
+
+<h2>❤️ Friendship Calculator</h2>
+
+<input id="name1" placeholder="Your name">
+<input id="name2" placeholder="Friend's name">
+
+<button onclick="calculate()">Calculate</button>
+
+<h3 id="result"></h3>
+
+<script>
+function calculate() {
+    let n1 = document.getElementById("name1").value;
+    let n2 = document.getElementById("name2").value;
+
+    if (n1 == "" || n2 == "") {
+        document.getElementById("result").innerText =
+        "Please enter both names!";
+        return;
+    }
+
+    let percent = Math.floor(Math.random() * 51) + 50;
+
+    document.getElementById("result").innerText =
+        n1 + " ❤️ " + n2 + " = " + percent + "% Friendship!";
+}
+</script>
+
+</body>
+</html>
