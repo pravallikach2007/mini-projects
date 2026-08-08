@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Memory Test</title>
+</head>
+<body>
+
+<h2>🧠 Memory Test</h2>
+
+<button onclick="startGame()">Start</button>
+<h3 id="number"></h3>
+
+<input id="answer" placeholder="Enter number">
+<button onclick="check()">Check</button>
+
+<p id="result"></p>
+
+<script>
+let num;
+
+function startGame() {
+    num = Math.floor(10000 + Math.random() * 90000);
+
+    document.getElementById("number").innerText = num;
+
+    setTimeout(() => {
+        document.getElementById("number").innerText =
+        "Remember the number!";
+    }, 2000);
+}
+
+function check() {
+    let answer = document.getElementById("answer").value;
+
+    if (answer == num)
+        document.getElementById("result").innerText =
+        "🎉 Correct! Great memory!";
+    else
+        document.getElementById("result").innerText =
+        "❌ Wrong! Number was " + num;
+}
+</script>
+
+</body>
+</html>
