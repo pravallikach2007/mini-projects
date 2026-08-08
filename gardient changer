@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gradient Generator</title>
+</head>
+<body>
+
+<h2>🎨 Random Gradient Generator</h2>
+
+<button onclick="generate()">Generate Gradient</button>
+
+<p id="code"></p>
+
+<script>
+function generate() {
+    let c1 = "#" + Math.floor(Math.random()*16777215)
+        .toString(16);
+    let c2 = "#" + Math.floor(Math.random()*16777215)
+        .toString(16);
+
+    let gradient = `linear-gradient(135deg, ${c1}, ${c2})`;
+
+    document.body.style.background = gradient;
+    document.getElementById("code").innerText = gradient;
+}
+</script>
+
+</body>
+</html>
